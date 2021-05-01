@@ -1,0 +1,13 @@
+{% extends 'shablon.html' %}
+
+{% block page_header %}Добавить статью{% endblock page_header %}
+
+{% block content %}
+<body style="background-size: 100%; background-image: url('https://gx.net.ua/news_images/1458422355.jpg') ">
+    <div class="font-weight-bold d-flex justify-content-center" style="text-align: center">
+    <form action="" method="post">
+        <div class="container">{% include 'partial/form.html' with button_text="Добавить Отзыв" %}</div>
+    </form>
+    </div>
+</body>
+{% endblock content %}

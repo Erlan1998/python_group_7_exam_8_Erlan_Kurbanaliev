@@ -1,9 +1,9 @@
 {% extends 'shablon.html' %}
 
 {% block content %}
-
+<body style="background-size: 100%; background-image: url('https://thumbs.dreamstime.com/b/%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B0%D1%8F-%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%86%D0%B8%D1%8F-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC-%D0%BF%D0%BE-%D0%B4%D0%B5%D0%BB%D0%B0-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8-112471615.jpg')">
+<div class="container" style='max-width: 500px; color: black'>
 <div class="d-flex justify-content-center">
-
   <div class="card" style="width:400px; text-align: center">
       <h4>Информация о Товаре</h4>
       {% if product.image %}
@@ -12,16 +12,39 @@
           <img src="/uploads/user_pics/notfoto.png"  width="260" height="300" alt="">
       {% endif %}
       <div class="card-body">
-
           <h4 class="card-title">Название: {{ product.name }}</h4>
           <p class="card-text">О товаре: {{ product.description}}</p>
           <p class="card-text">Категория: {{ product.category }}</p>
           <a href="{% url 'product_update' product.id %}"><button type="button" class="btn btn-warning">Редактировать!</button></a>
           <a href="{% url 'product_delete' product.id %}"><button type="button" class="btn btn-secondary">Удаление!</button></a>
+          <a href="{% url 'review_add' product.id %}"><button type="button" class="btn btn-warning">Оставить отзов!</button></a>
       </div>
+  </div>
  </div>
-
+      {% if not product.Reviews.all %}
+            <h2>NOT TASKS</h2>
+        {% else %}
+            </br>
+            {% for rev in product.Reviews.all %}
+                <div class="list-group">
+                  <a class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Имя: {{ user.username }}</h5>
+                      <small class="text-muted">Рейтинг: {{ rev.rating }}</small>
+                    </div>
+                           <p class="mb-1">@mail: {{ user.email }}</p>
+                      <p class="mb-1">Описание: {{ rev.description }}</p>
+                  </a>
+                    <a href="{% url 'review_update' rev.id %}"><button type="button" class="btn btn-warning">Редактировать!</button></a>
+                    <a href="{% url 'review_delete' rev.id %}"><button type="button" class="btn btn-secondary">Удаление!</button></a>
+                </div>
+                </br>
+            {% endfor %}
+            {% if is_paginated %}
+            {% include 'partial/paginate.html' %}
+            {% endif %}
+    {% endif %}
 </div>
-
+</body>
 
 {% endblock content %}

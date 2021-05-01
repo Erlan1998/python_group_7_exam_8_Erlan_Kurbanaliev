@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.views.generic import CreateView, ListView,  UpdateView, DetailView, DeleteView
 from django.urls import reverse, reverse_lazy
 from webapp.forms import SearchForm, ProductForm
-from webapp.models import Product
+from webapp.models import Product, Review
 from django.db.models import Q
 from django.utils.http import urlencode
 
@@ -50,6 +50,22 @@ class ProductDetailView(DetailView):
     template_name = 'products/product_view.html'
     model = Product
     pk_url_kwarg = "id"
+    context_object_name = 'product'
+    paginate_by = 3
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        object_list = Review.objects.filter(product=self.get_object())
+        paginator = Paginator(object_list, self.paginate_by, )
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        if page_obj.paginator.num_pages == 1:
+            context['is_paginated'] = False
+        else:
+            context['is_paginated'] = True
+        context['page_obj'] = page_obj
+        context['reviews'] = page_obj.object_list
+        return context
 
 
 class ProductCreate(CreateView):

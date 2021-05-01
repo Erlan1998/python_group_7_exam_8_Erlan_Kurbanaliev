@@ -6,7 +6,7 @@
     "name": "Мяч",
     "category": "sports",
     "description": "им играют в футбол!",
-    "image": ""
+    "image": "user_pics/Без_названия_5SrdYP4.jpeg"
   }
 },
 {
@@ -26,7 +26,7 @@
     "name": "Туфли OXFORD",
     "category": "Classic",
     "description": "",
-    "image": ""
+    "image": "user_pics/519.970.jpg"
   }
 },
 {
@@ -36,7 +36,7 @@
     "name": "Веник",
     "category": "For home",
     "description": "",
-    "image": ""
+    "image": "user_pics/Без_названия_1_1O0vLSy.jpeg"
   }
 },
 {
@@ -46,7 +46,7 @@
     "name": "Ручки",
     "category": "for study",
     "description": "",
-    "image": ""
+    "image": "user_pics/luxury_pen_1.jpg"
   }
 },
 {
@@ -66,7 +66,20 @@
     "name": "Телевизор",
     "category": "For home",
     "description": "",
-    "image": ""
+    "image": "user_pics/img_0_95_1710_0_G93jw99.jpg"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 2,
+  "fields": {
+    "user": 1,
+    "product": 4,
+    "description": "dadadad",
+    "rating": 5,
+    "moderated": null,
+    "created_at": "2021-05-01T12:21:01.119Z",
+    "updated_at": "2021-05-01T12:21:01.119Z"
   }
 },
 {
@@ -74,7 +87,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$260000$g1CkZirR50CaECt8y8j6IP$cypc98xqWO/nMwFv327nnyHLevJ1FQV1ixsFKohNllg=",
-    "last_login": "2021-05-01T06:44:27.735Z",
+    "last_login": "2021-05-01T12:21:40.630Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -83,6 +96,24 @@
     "is_staff": true,
     "is_active": true,
     "date_joined": "2021-05-01T06:43:57.161Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$rp88DE8Ce6fvZudpx1tDNY$7ua5UYmJmWksilRtBjMxkC3x7sf/nUo1XJcWn88Xevk=",
+    "last_login": "2021-05-01T12:22:08Z",
+    "is_superuser": false,
+    "username": "erlan",
+    "first_name": "ERLAN",
+    "last_name": "Kurbanaliev",
+    "email": "kurbanalieverlan@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-05-01T12:21:56Z",
     "groups": [],
     "user_permissions": []
   }

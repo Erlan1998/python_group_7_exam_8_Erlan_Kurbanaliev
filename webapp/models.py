@@ -6,7 +6,6 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 category_choices = [('other', 'Разное'), ('sports', 'Спортивне'),  ('Classic', 'Классические'), ('For home', 'Для дома'), ('for study', 'Для учебы')]
 
 
-
 class Product(models.Model):
     name = models.CharField(max_length=100, null=False, blank=False)
     category = models.CharField(max_length=100, null=False, blank=False, choices=category_choices)
@@ -23,11 +22,11 @@ class Product(models.Model):
 
 
 class Review(models.Model):
-    user = models.ForeignKey(get_user_model(), related_name='review', on_delete=models.CASCADE, verbose_name='Пользователь', null=True)
-    product = models.ForeignKey('webapp.Product', related_name='review', on_delete=models.CASCADE)
+    user = models.ForeignKey(get_user_model(), related_name='Reviews', on_delete=models.CASCADE, verbose_name='Пользователь', null=True)
+    product = models.ForeignKey('webapp.Product', related_name='Reviews', on_delete=models.CASCADE)
     description = models.TextField(max_length=2000, null=False, blank=False)
     rating = models.IntegerField(null=False, blank=False, validators=[MinValueValidator(1), MaxValueValidator(5)])
-    moderated = models.BooleanField(null=False, blank=False)
+    moderated = models.BooleanField(null=True, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
