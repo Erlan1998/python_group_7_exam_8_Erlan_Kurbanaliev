@@ -16,8 +16,8 @@
           <h4 class="card-title">Название: {{ product.name }}</h4>
           <p class="card-text">О товаре: {{ product.description}}</p>
           <p class="card-text">Категория: {{ product.category }}</p>
-{#          <a href="{% url 'product_update' product.id %}"><button type="button" class="btn btn-warning">Редактировать!</button></a>#}
-{#          <a href="{% url 'product_delete' product.id %}"><button type="button" class="btn btn-secondary">Удаление!</button></a>#}
+          <a href="{% url 'product_update' product.id %}"><button type="button" class="btn btn-warning">Редактировать!</button></a>
+          <a href="{% url 'product_delete' product.id %}"><button type="button" class="btn btn-secondary">Удаление!</button></a>
       </div>
  </div>
 

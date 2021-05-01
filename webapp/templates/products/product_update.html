@@ -1,0 +1,11 @@
+{% extends 'shablon.html' %}
+
+{% block content %}
+    <div class="d-flex justify-content-center" style="text-align: center">
+    <form method="post" enctype="multipart/form-data">
+    <form action="{% url "product_update" product.id %}" method="post">
+        {% include "partial/form.html" with button_text="Редактировать Товар" %}
+    </form></form>
+    </div>
+
+{% endblock content %}
