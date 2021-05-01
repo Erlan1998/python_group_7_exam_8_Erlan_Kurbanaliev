@@ -8,7 +8,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'category']
     list_filter = ['category']
     search_fields = ['category']
-    fields = ['id', 'name', 'description', 'category']
+    fields = ['id', 'name', 'description', 'category', 'image']
     readonly_fields = ['id']
 
 admin.site.register(Product, ProductAdmin)

@@ -1,0 +1,35 @@
+{% extends 'shablon.html' %}
+
+{% block content %}
+    </br>
+    <body style="background-size: 100%; background-image: url('https://image.freepik.com/free-vector/shopping-online-on-website-online-store-shop-concept_100456-95.jpg') ">
+        {% if not products %}
+            <h2>НЕТ ПРОДУКТОВ</h2>
+        {% else %}
+            {% for product in products %}
+            <div class="container card mb-3 " style="max-width: 800px;">
+                <a href="{% url 'product' product.id %}">
+                <div class="row no-gutters">
+                        <div class="col-md-4" style="margin: 20px auto">
+                            {% if product.image %}
+                                <img class="avatar" src="{{ product.image.url }}" width="230" height="270" alt="image product">
+                            {% else %}
+                                <img src="/uploads/user_pics/notfoto.png"  width="230" height="270" alt="">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h4 class="card-title">Название: {{ product.name }}</h4>
+                            <p class="card-text">Категория: {{ product.category }}</p>
+                          </div>
+                        </div>
+                </div>
+                </a>
+            </div>
+            {% endfor %}
+                    {% if is_paginated %}
+                    {% include 'partial/paginate.html' %}
+                    {% endif %}
+        {% endif %}
+    </body>
+{% endblock content %}
