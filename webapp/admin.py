@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from webapp.models import Product
+from webapp.models import Product, Review
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -12,3 +12,4 @@ class ProductAdmin(admin.ModelAdmin):
     readonly_fields = ['id']
 
 admin.site.register(Product, ProductAdmin)
+admin.site.register(Review)
