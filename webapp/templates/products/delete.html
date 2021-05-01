@@ -1,0 +1,15 @@
+{% extends 'shablon.html' %}
+
+{% block content %}
+<body style="background-size: 100%; background-image: url('https://www.kv.by/sites/default/files/pictures/mainimage/2019/02/foto2.jpg') ">
+    <div class="container text-white" style="text-align: center">
+    <H2> Вы уверены, что хотите удалить задачу {{ project.name }} ? </H2>
+    <form action="{% url 'project_delete' project.id %}" method="POST">
+        {% csrf_token %}
+        <input class="btn btn-primary btn-lg active" role="button" style="padding: 10px 42px" aria-pressed="true" type="submit" value="Да"/>
+         <a href="{% url "project" project.id %}" class="btn btn-secondary btn-lg active"  role="button" aria-pressed="true">Отмена!</a>
+    </form>
+    </div>
+</body>
+{% endblock content %}
+

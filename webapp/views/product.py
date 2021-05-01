@@ -2,7 +2,7 @@ from django.core.paginator import Paginator
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.views.generic import CreateView, ListView,  UpdateView, DetailView, DeleteView
 from django.urls import reverse, reverse_lazy
-from webapp.forms import SearchForm
+from webapp.forms import SearchForm, ProductForm
 from webapp.models import Product
 from django.db.models import Q
 from django.utils.http import urlencode
@@ -50,3 +50,12 @@ class ProductDetailView(DetailView):
     template_name = 'products/product_view.html'
     model = Product
     pk_url_kwarg = "id"
+
+
+class ProductCreate(CreateView):
+    template_name = 'products/create.html'
+    form_class = ProductForm
+    model = Product
+
+    def get_success_url(self):
+        return reverse('product', kwargs={'id': self.object.id})

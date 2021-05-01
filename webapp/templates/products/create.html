@@ -1,0 +1,12 @@
+{% extends 'shablon.html' %}
+
+{% block page_header %}Добавить статью{% endblock page_header %}
+
+{% block content %}
+    <div class="d-flex justify-content-center" style="text-align: center">
+        <form method="post" enctype="multipart/form-data">
+        <form action="{% url 'product_create' %}" method="post">
+        <div class="container">{% include "partial/form.html" with button_text="Добавить товар" %}</div>
+    </form></form>
+    </div>
+{% endblock content %}
