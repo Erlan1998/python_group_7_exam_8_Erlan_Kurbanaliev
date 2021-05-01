@@ -1,0 +1,90 @@
+[
+{
+  "model": "webapp.product",
+  "pk": 1,
+  "fields": {
+    "name": "Мяч",
+    "category": "sports",
+    "description": "им играют в футбол!",
+    "image": ""
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 2,
+  "fields": {
+    "name": "Футболка",
+    "category": "sports",
+    "description": "Легкая дышущая футболка!",
+    "image": ""
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 3,
+  "fields": {
+    "name": "Туфли OXFORD",
+    "category": "Classic",
+    "description": "",
+    "image": ""
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 4,
+  "fields": {
+    "name": "Веник",
+    "category": "For home",
+    "description": "",
+    "image": ""
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 5,
+  "fields": {
+    "name": "Ручки",
+    "category": "for study",
+    "description": "",
+    "image": ""
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 6,
+  "fields": {
+    "name": "Мороженое",
+    "category": "other",
+    "description": "",
+    "image": ""
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 7,
+  "fields": {
+    "name": "Телевизор",
+    "category": "For home",
+    "description": "",
+    "image": ""
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$g1CkZirR50CaECt8y8j6IP$cypc98xqWO/nMwFv327nnyHLevJ1FQV1ixsFKohNllg=",
+    "last_login": "2021-05-01T06:44:27.735Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@mail.ru",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-05-01T06:43:57.161Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
